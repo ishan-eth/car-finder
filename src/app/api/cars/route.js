@@ -1,4 +1,47 @@
 // Sample car data
+// Add this code to the top of the file, before the GET function
+
+export async function GET(request) {
+    const { searchParams } = new URL(request.url);
+    
+    // Extract filter parameters
+    const id = searchParams.get('id');
+    const brand = searchParams.get('brand');
+    const minPrice = searchParams.get('minPrice');
+    const maxPrice = searchParams.get('maxPrice');
+    const fuelType = searchParams.get('fuelType');
+    const seatingCapacity = searchParams.get('seatingCapacity');
+    const search = searchParams.get('search');
+    const page = parseInt(searchParams.get('page') || '1');
+    const limit = parseInt(searchParams.get('limit') || '10');
+    const sort = searchParams.get('sort');
+    
+    // Filter cars based on parameters
+    let filteredCars = [...cars];
+    
+    if (id) {
+      // If ID is provided, we'll still return all matching cars but usually there will be only one
+      filteredCars = filteredCars.filter(car => car.id === parseInt(id));
+      
+      return Response.json({
+        cars: filteredCars,
+        pagination: {
+          total: filteredCars.length,
+          page: 1,
+          limit: filteredCars.length,
+          totalPages: 1
+        }
+      });
+    }
+    
+    // The rest of the existing filter code remains the same
+    if (brand) {
+      // ...existing code
+    }
+    
+    // ...rest of the existing function
+  }
+  
 const cars = [
     {
       id: 1,
