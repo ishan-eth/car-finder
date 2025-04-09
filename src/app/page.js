@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useCars } from './context/CarContext';
+import { useCars } from '../context/CarContext';
 import { Search, Filter, Sun, Moon, ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 
