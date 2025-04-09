@@ -1,12 +1,13 @@
 'use client';
+
 import { useState, useEffect } from 'react';
-import { useCars } from '@/context/CarContext';
-import { ArrowLeft } from 'lucide-react';
+import { useCars } from '../../context/CarContext';
+import { ArrowLeft, Sun, Moon } from 'lucide-react';
 import Link from 'next/link';
 
 export default function CarDetails({ params }) {
   const { id } = params;
-  const { toggleWishlist, isInWishlist } = useCars();
+  const { toggleWishlist, isInWishlist, darkMode, toggleDarkMode } = useCars();
   const [car, setCar] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -42,7 +43,7 @@ export default function CarDetails({ params }) {
   
   if (loading) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
+      <div className="flex justify-center items-center min-h-screen bg-gray-100 dark:bg-gray-900">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
       </div>
     );
@@ -50,12 +51,12 @@ export default function CarDetails({ params }) {
   
   if (error || !car) {
     return (
-      <div className="container mx-auto px-4 py-8">
-        <div className="bg-red-100 text-red-700 p-4 rounded-md text-center">
+      <div className="container mx-auto px-4 py-8 bg-gray-100 dark:bg-gray-900 min-h-screen">
+        <div className="bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 p-4 rounded-md text-center">
           {error || 'Car not found'}
         </div>
         <div className="mt-4 text-center">
-          <Link href="/" className="text-blue-600 hover:underline">
+          <Link href="/" className="text-blue-600 dark:text-blue-400 hover:underline">
             Back to Cars
           </Link>
         </div>
@@ -65,8 +66,27 @@ export default function CarDetails({ params }) {
   
   return (
     <main className="min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+      <nav className="bg-white dark:bg-gray-800 shadow-md p-4 transition-colors duration-300">
+        <div className="container mx-auto flex justify-between items-center">
+          <Link href="/" className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+            Car Finder
+          </Link>
+          <button 
+            onClick={toggleDarkMode}
+            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+            aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+          >
+            {darkMode ? (
+              <Sun className="w-5 h-5 text-yellow-500" />
+            ) : (
+              <Moon className="w-5 h-5 text-gray-700" />
+            )}
+          </button>
+        </div>
+      </nav>
+      
       <div className="container mx-auto px-4 py-8">
-        <Link href="/" className="flex items-center text-blue-600 mb-6 hover:underline">
+        <Link href="/" className="flex items-center text-blue-600 dark:text-blue-400 mb-6 hover:underline">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Cars
         </Link>

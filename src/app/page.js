@@ -1,11 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { useCars } from '../context/CarContext';
+import { useCars } from './context/CarContext';
 import { Search, Filter, Sun, Moon, ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 
-// Components
+// Navbar Component
 const Navbar = () => {
   const { darkMode, toggleDarkMode } = useCars();
   
@@ -22,6 +22,7 @@ const Navbar = () => {
           <button 
             onClick={toggleDarkMode}
             className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+            aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
           >
             {darkMode ? (
               <Sun className="w-5 h-5 text-yellow-500" />
