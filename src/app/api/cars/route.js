@@ -81,7 +81,7 @@ const cars = [
       fuelType: "Electric",
       seatingCapacity: 5,
       mileage: "120 MPGe",
-      image: "/images/chevrolet-bolt.jpg",
+      image: "/images/tesla-model3.jpg",
       description: "Affordable all-electric vehicle with surprising range."
     },
     {
@@ -93,7 +93,7 @@ const cars = [
       fuelType: "Gasoline",
       seatingCapacity: 5,
       mileage: "25 mpg",
-      image: "/images/audi-q5.jpg",
+      image: "/images/bmw-3series.jpg",
       description: "Premium compact SUV with sophisticated technology."
     },
     {
@@ -105,7 +105,7 @@ const cars = [
       fuelType: "Gasoline",
       seatingCapacity: 5,
       mileage: "28 mpg",
-      image: "/images/mazda-cx5.jpg",
+      image: "/images/honda-civic.jpg",
       description: "Stylish crossover with engaging driving dynamics."
     },
     {
@@ -117,7 +117,7 @@ const cars = [
       fuelType: "Hybrid",
       seatingCapacity: 5,
       mileage: "30 mpg",
-      image: "/images/mercedes-eclass.jpg",
+      image: "/images/bmw-3series.jpg",
       description: "Luxury vehicle with cutting-edge technology and comfort."
     },
     {
@@ -129,7 +129,7 @@ const cars = [
       fuelType: "Gasoline",
       seatingCapacity: 8,
       mileage: "24 mpg",
-      image: "/images/kia-telluride.jpg",
+      image: "/images/tesla-model3.jpg",
       description: "Award-winning midsize SUV with generous space."
     },
     {
@@ -141,8 +141,8 @@ const cars = [
       fuelType: "Gasoline",
       seatingCapacity: 5,
       mileage: "29 mpg",
-      image: "/images/subaru-outback.jpg",
-      description: "Versatile wagon with standard all-wheel drive."
+      image: "/images/bmw-3series.jpg",
+      description: "Premium compact SUV with sophisticated technology."
     },
     {
       id: 13,
@@ -153,7 +153,7 @@ const cars = [
       fuelType: "Hybrid",
       seatingCapacity: 5,
       mileage: "31 mpg",
-      image: "/images/lexus-rx.jpg",
+      image: "/images/honda-civic.jpg",
       description: "Refined luxury SUV with excellent reliability."
     },
     {
@@ -165,7 +165,7 @@ const cars = [
       fuelType: "Electric",
       seatingCapacity: 5,
       mileage: "112 MPGe",
-      image: "/images/volkswagen-id4.jpg",
+      image: "/images/toyota-camry.jpg",
       description: "Electric SUV with practical range and spacious interior."
     },
     {
@@ -177,7 +177,7 @@ const cars = [
       fuelType: "Gasoline",
       seatingCapacity: 5,
       mileage: "33 mpg",
-      image: "/images/nissan-rogue.jpg",
+      image: "/images/tesla-model3.jpg",
       description: "Popular compact SUV with good fuel economy."
     }
   ];
