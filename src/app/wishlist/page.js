@@ -1,6 +1,6 @@
 'use client';
 
-import { useCars } from '../context/CarContext';
+import { useCars } from '../../context/CarContext';
 import { ArrowLeft, Sun, Moon } from 'lucide-react';
 import Link from 'next/link';
 

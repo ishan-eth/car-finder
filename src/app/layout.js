@@ -1,5 +1,5 @@
 import './globals.css';
-import { CarProvider } from './context/CarContext';
+import { CarProvider } from '../context/CarContext';
 
 export const metadata = {
   title: 'Car Finder',
