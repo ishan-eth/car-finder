@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# 🚗 Car Finder
 
-First, run the development server:
+**Car Finder** is a modern web app built with **Next.js 13 (App Router)** and **Tailwind CSS**, designed to help users explore and find their ideal vehicle based on filters like brand, model, fuel type, and more.
+
+## ✨ Features
+
+- Clean, responsive UI using Tailwind CSS
+- Car listings and filters for dynamic searching
+- Toggleable Dark Mode
+- Modular, component-based structure
+
+## 🧪 Technologies Used
+
+- [Next.js 13](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- TypeScript
+- React Hooks
+- Modern file-based routing (App Router)
+
+## 🚧 Known Issues
+
+- **Dark Mode Toggle**: Although the toggle button correctly adds/removes the `dark` class on the root `<html>` element, the full styling is not being applied across all components.  
+  **Reason**: The `dark:` classes are not yet implemented everywhere and Tailwind's dark mode was not fully configured in the initial setup.  
+  **Note**: Given more time, this can be fully resolved with proper configuration and styling updates.
+
+## 📦 Getting Started
 
 ```bash
+# Clone the repo
+git clone https://github.com/ishan-eth/car-finder.git
+cd car-finder
+
+# Install dependencies
+npm install
+
+# Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📁 Project Structure
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```
+src/
+├── app/              # Next.js pages and layout
+├── components/       # Reusable UI components
+├── styles/           # Global CSS
+├── types/            # Type definitions
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📌 TODO
 
-## Learn More
+- Fix full dark mode implementation
+- Add persistent dark mode state with `localStorage`
+- Add sorting/filter enhancements
+- Integrate car data from a real API
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🤝 Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Pull requests are welcome! If you have suggestions for improvements, feel free to open an issue or submit a PR.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📃 License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is open-source and available under the [MIT License](LICENSE).
