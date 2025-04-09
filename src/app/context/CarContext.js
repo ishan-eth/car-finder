@@ -2,7 +2,7 @@
 
 import { createContext, useState, useEffect, useContext } from 'react';
 
-const CarContext = createContext();
+const CarContext = createContext(null);
 
 export function CarProvider({ children }) {
   const [cars, setCars] = useState([]);
@@ -215,3 +215,5 @@ const toggleWishlist = (car) => {
 export function useCars() {
   return useContext(CarContext);
 }
+
+export default CarContext;
