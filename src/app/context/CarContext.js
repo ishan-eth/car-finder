@@ -141,21 +141,35 @@ export function CarProvider({ children }) {
   };
   
   // Toggle wishlist item
-  const toggleWishlist = (car) => {
-    setWishlist(prevWishlist => {
-      // Check if car is already in wishlist
-      const isInWishlist = prevWishlist.some(item => item.id === car.id);
-      
-      if (isInWishlist) {
-        // Remove from wishlist
-        return prevWishlist.filter(item => item.id !== car.id);
-      } else {
-        // Add to wishlist
-        return [...prevWishlist, car];
-      }
-    });
-  };
+  // In src/app/context/CarContext.js
+// Update the toggleWishlist function:
+
+// Toggle wishlist item
+const toggleWishlist = (car) => {
+  console.log("Toggling wishlist for car:", car);
   
+  setWishlist(prevWishlist => {
+    // Check if car is already in wishlist
+    const isInWishlist = prevWishlist.some(item => item.id === car.id);
+    let newWishlist;
+    
+    if (isInWishlist) {
+      // Remove from wishlist
+      console.log("Removing car from wishlist");
+      newWishlist = prevWishlist.filter(item => item.id !== car.id);
+    } else {
+      // Add to wishlist
+      console.log("Adding car to wishlist");
+      newWishlist = [...prevWishlist, car];
+    }
+    
+    // Update localStorage
+    localStorage.setItem('carWishlist', JSON.stringify(newWishlist));
+    console.log("New wishlist:", newWishlist);
+    
+    return newWishlist;
+  });
+};
   // Check if a car is in the wishlist
   const isInWishlist = (carId) => {
     return wishlist.some(car => car.id === carId);
